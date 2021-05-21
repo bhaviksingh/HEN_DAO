@@ -1,0 +1,45 @@
+Comment...
+ h1: Store Value
+Creating contract
+ -> 12
+ => test-output/StoreValue/step_001_cont_0_storage.tz 1
+ => test-output/StoreValue/step_001_cont_0_storage.json 1
+ => test-output/StoreValue/step_001_cont_0_sizes.csv 2
+ => test-output/StoreValue/step_001_cont_0_storage.py 1
+ => test-output/StoreValue/step_001_cont_0_types.py 7
+ => test-output/StoreValue/step_001_cont_0_contract.tz 50
+ => test-output/StoreValue/step_001_cont_0_contract.json 52
+ => test-output/StoreValue/step_001_cont_0_contract.py 18
+ => test-output/StoreValue/step_002_cont_0_params.py 1
+ => test-output/StoreValue/step_002_cont_0_params.tz 1
+ => test-output/StoreValue/step_002_cont_0_params.json 1
+Executing replace(sp.record(value = 15))...
+ -> 15
+Comment...
+ p: Some computation
+Computing sp.contract_data(0).storedValue * 12...
+ => 180
+ => test-output/StoreValue/step_005_cont_0_params.py 1
+ => test-output/StoreValue/step_005_cont_0_params.tz 1
+ => test-output/StoreValue/step_005_cont_0_params.json 1
+Executing replace(sp.record(value = 25))...
+ -> 25
+ => test-output/StoreValue/step_006_cont_0_params.py 1
+ => test-output/StoreValue/step_006_cont_0_params.tz 1
+ => test-output/StoreValue/step_006_cont_0_params.json 1
+Executing double(sp.record())...
+ -> 50
+ => test-output/StoreValue/step_007_cont_0_params.py 1
+ => test-output/StoreValue/step_007_cont_0_params.tz 1
+ => test-output/StoreValue/step_007_cont_0_params.json 1
+Executing divide(sp.record(divisor = 2))...
+ -> --- Expected failure in transaction --- WrongCondition in line 19: params.divisor > 5
+Verifying sp.contract_data(0).storedValue == 50...
+ OK
+ => test-output/StoreValue/step_009_cont_0_params.py 1
+ => test-output/StoreValue/step_009_cont_0_params.tz 1
+ => test-output/StoreValue/step_009_cont_0_params.json 1
+Executing divide(sp.record(divisor = 6))...
+ -> 8
+Verifying sp.contract_data(0).storedValue == 8...
+ OK
